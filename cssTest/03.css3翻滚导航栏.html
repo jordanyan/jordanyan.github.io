@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		ul,li span{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 600px;
+			/*overflow: hidden;*/
+			margin: 100px auto;
+			list-style-type: none;
+		}
+		li{
+			width: 100px;
+			height: 30px;
+			float: left;
+			line-height: 30px;
+			text-align: center;
+			margin-right: 5px;
+			cursor: pointer;
+			transform-style: preserve-3d;
+			/*transform:rotateY(-40deg) rotateX(-50deg);*/
+			position: relative;
+			transition: all 0.5s;
+		}
+		li:nth-child(2){
+			transition: all 0.5s 0.1s;
+		}
+		li:nth-child(3){
+			transition: all 0.5s 0.2s;
+		}
+		li:nth-child(4){
+			transition: all 0.5s 0.3s;
+		}
+		li:nth-child(5){
+			transition: all 0.5s 0.4s;
+		}
+		span{
+			display: block;
+			width: 100%;
+			height: 100%;
+			background: lightblue;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		li span:nth-child(1){
+			background: green;
+			transform:translateZ(15px);
+		}
+		li span:nth-child(2){
+			transform:rotateX(90deg) translateZ(15px);
+		}
+		ul:hover li{
+			transform: rotateX(-90deg);
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>
+			<span>hello</span>
+			<span>world</span>
+		</li>
+		<li>
+			<span>hello</span>
+			<span>world</span>
+		</li>
+		<li>
+			<span>hello</span>
+			<span>world</span>
+		</li>
+		<li>
+			<span>hello</span>
+			<span>world</span>
+		</li>
+		<li>
+			<span>hello</span>
+			<span>world</span>
+		</li>
+	</ul>
+</body>
+</html>

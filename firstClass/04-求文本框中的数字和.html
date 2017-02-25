@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>求文本框中的数字和</title>
+	<style>
+		#box{
+			width: 300px;
+			margin:  0 auto;
+		}
+		#sum{
+			margin-top: 20px;
+			color: red;
+			font-size: 40px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<input type="text" id="txt" value="1,4,3,6,66,77,44">
+		<button id="btn">求和</button>
+		<div id="sum"></div>
+	</div>
+	<script>
+		var txt=document.getElementById("txt");
+		var btn=document.getElementById("btn");
+		btn.onclick=function(){
+			var sum=0;
+			var arr=txt.value.split(",");
+			for(var i=0,l=arr.length;i<l;i++){
+				sum+=parseInt(arr[i]);
+			}
+			document.getElementById("sum").innerHTML=sum;
+		}
+	</script>
+</body>
+</html>

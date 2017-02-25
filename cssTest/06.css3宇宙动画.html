@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+			background: url("./images/bg.jpg");
+		}
+		ul{
+			width: 500px;
+			height: 500px;
+			margin: 50px auto;
+			list-style-type: none; 
+			position: relative;
+		}
+		ul li{
+			border: 2px solid #394057;
+			border-radius: 50%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+			animation-name: roll;
+		}
+		ul li span{
+			display: block;
+			position: absolute;
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+		}
+		ul li:nth-child(1){
+			width: 60px;
+			height: 60px;
+			border: none;
+			background-color: #f0df21;
+		}
+		li:nth-child(2){
+			width: 160px;
+			height: 160px;
+			animation-duration: 5s;
+		}
+		li:nth-child(2) span{
+			background-color: yellow;
+			left: 42px;
+			top: 0;
+		}
+		li:nth-child(3){
+			width: 220px;
+			height: 220px;
+			animation-duration: 8s;
+		}
+		li:nth-child(3) > span{
+			width: 16px;
+			height: 16px;
+			background-color: #65b7f0;
+			left: 0;
+			top: 100px;
+			animation: roll 4s infinite linear;
+		}
+		li:nth-child(3) > span span{
+			width: 6px;
+			height: 6px;
+			background-color: gray;
+			left: -7px;
+			top: 0;
+		}
+		li:nth-child(4){
+			width: 280px;
+			height: 280px;
+			animation-duration: 14s;
+		}
+		li:nth-child(4) span{
+			width: 18px;
+			height: 18px;
+			background-color: #8bf199;
+			right: -8px;
+			top: 100px;
+		}
+		li:nth-child(5){
+			width: 350px;
+			height: 350px;
+			animation-duration: 20s;
+		}
+		li:nth-child(5) span{
+			width: 18px;
+			height: 18px;
+			background-color: #f27b46;
+			right: 100px;
+			bottom: 4px;
+		}
+		li:nth-child(6){
+			width: 420px;
+			height: 420px;
+			animation-duration: 30s;
+		}
+		li:nth-child(6) span{
+			width: 22px;
+			height: 22px;
+			background-color: #ed6b6b;
+			right: 100px;
+			top: 13px;
+		}
+		@keyframes roll {
+			0% {
+				transform: translate(-50%, -50%) rotate(0deg);
+			}
+			100% {
+				transform: translate(-50%, -50%) rotate(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li>
+			<span>
+				
+			</span>
+		</li>
+		<li>
+			<span><span></span></span>
+		</li>
+		<li>
+			<span></span>
+		</li>
+		<li>
+			<span></span>
+		</li>
+		<li>
+			<span></span>
+		</li>
+	</ul>
+</body>
+</html>

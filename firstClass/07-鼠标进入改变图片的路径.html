@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: #ccc;
+		}
+		.box{
+			width: 400px;
+			height: 500px;
+			border-radius: 6px;
+			padding: 5px;
+			background: #fff;
+			margin: 10px auto;
+		}
+		img{
+			width: 90px;
+			height: 90px;
+			cursor: crosshair;
+			margin: 5px;
+			float: left;
+			opacity: 0.5;
+		}
+		#first{
+			width: 290px;
+			height: 290px;
+			opacity: 1.0;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<img id="first" src="./images/img1.jpg" alt="">
+		<img src="./images/img1.jpg" alt="">
+		<img src="./images/img2.jpg" alt="">
+		<img src="./images/img3.jpg" alt="">
+		<img src="./images/img4.jpg" alt="">
+		<img src="./images/img5.jpg" alt="">
+		<img src="./images/img6.jpg" alt="">
+		<img src="./images/img7.jpg" alt="">
+		<img src="./images/img8.jpg" alt="">
+		<img src="./images/img9.jpg" alt="">
+		<img src="./images/img10.jpg" alt="">
+		<img src="./images/img11.jpg" alt="">
+		<!-- <img src="./images/img12.jpg" alt=""> -->
+	</div>
+</body>
+<script>
+	var imgs=document.getElementsByTagName("img");
+	var first=document.getElementById("first");
+	for(var i=1;i<imgs.length;i++){
+		imgs[i].onmouseenter=function(){
+			first.src=this.src;
+			for(var j=1;j<imgs.length;j++){
+				imgs[j].style.opacity=0.5;
+			}
+			this.style.opacity=1.0;
+		}
+	}
+</script>
+</html>

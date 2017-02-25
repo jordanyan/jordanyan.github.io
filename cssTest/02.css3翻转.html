@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.dv{
+			width: 200px;
+			height: 200px;
+			position: relative;
+			margin: 200px auto;
+		}
+		.dv::before,
+		.dv::after{
+			content: "";
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			background: url("./images/watch.jpg") center no-repeat;
+			backface-visibility: hidden;
+			position: absolute;
+			top: 0;
+			left: 0;
+			transition: all 2s;
+		}
+		.dv::before{
+			transform: rotateY(-180deg);
+		}
+		.dv::after{
+			background: url("./images/logo.jpg") center no-repeat;
+		}
+		.dv:hover::before{
+			transform: rotateY(0deg);
+		}
+		.dv:hover::after{
+			transform: rotateY(180deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="dv"></div>
+</body>
+</html>

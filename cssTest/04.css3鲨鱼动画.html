@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			overflow: hidden;
+			background: lightblue;
+		}
+		.fishbox{
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			animation: fishMove 15s linear infinite;
+		}
+		.fish{
+			width: 174px;
+			height: 126px;
+			position: absolute;
+			left: 40%;
+			top: 0;
+			background: url("./images/fish.png") left top no-repeat;
+			animation: fishSwim 0.5s steps(8) infinite;
+
+		}
+		.sharkbox{
+			width: 509px;
+			height: 270px;
+			animation: sharkMove 15s linear infinite;
+		}
+		.shark{
+			width: 100%;
+			height: 100%;
+			background: url("./images/shark1.png") no-repeat;
+			animation: sharkSwim 1s steps(8) infinite;
+		}
+		.box{
+			width: 516px;
+			height: 273px;
+			position: absolute;
+			bottom: 0;
+			right: -520px;
+			animation: box 15s linear infinite;
+		}
+		.yellowShark{
+			width: 100%;
+			height: 100%;
+			background: url("./images/shark2.png") left top no-repeat;
+			transform: rotateY(180deg);
+			animation:  yellowSharkSwim 1s steps(8) infinite;
+
+		}
+		@keyframes yellowSharkSwim{
+			0%{
+
+			}
+			100%{
+				background-position: left -2184px;
+			}
+		}
+		@keyframes box{
+			0%{
+				
+			}
+			100%{
+				transform: translateX(-2000px);
+			}
+		}
+		@keyframes fishSwim{
+			0%{
+
+			}
+			100%{
+				background-position: left -1008px;
+			}
+		}
+		@keyframes fishMove{
+			0%{
+				
+			}
+			25%{
+				transform: translate(800px,0px) rotateZ(90deg);
+			}
+			50%{
+				transform: translate(800px,300px) rotateZ(145deg);
+			}
+			75%{
+				transform: translate(250px,300px) rotateZ(235deg);
+			}
+			100%{
+				transform: translate(0px,0px) rotateZ(360deg);
+			}
+		}
+		@keyframes sharkMove{
+			0%{
+				transform: translateX(-510px);
+			}
+			100%{
+				transform: translateX(2000px);
+			}
+		}
+		@keyframes sharkSwim{
+			0%{
+
+			}
+			100%{
+				background-position: left -2160px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="fishbox">
+		<div class="fish"></div>
+	</div>
+	<div class="sharkbox">
+		<div class="shark"></div>
+	</div>
+	<div class="box">
+		<div class="yellowShark"></div>
+	</div>
+</body>
+</html>

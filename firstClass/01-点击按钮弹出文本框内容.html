@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>点击按钮弹出文本框内容</title>
+	<style>
+		body{
+			text-align: center;
+		}
+		input{
+			height: 20px;
+			display: block;
+			margin: 0 auto 10px;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" value="我是文本框1">
+	<input type="text" value="我是文本框2">
+	<button id="btn">按钮</button>
+	<script>
+		var txt=document.getElementsByTagName("input");
+		var btn=document.getElementById("btn");
+		btn.onclick=function(){
+			var i=0,
+				l=txt.length;
+			for(;i<l;i++){
+				alert(txt[i].value);
+			}
+		}
+	</script>
+</body>
+</html>

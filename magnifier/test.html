@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>放大镜案例</title>
+	<style>
+		html,body{
+			width: 100%;
+			height: 100%;
+		}
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 300px;
+            height: 300px;
+            margin: 100px;
+            /*border: 1px solid #ccc;*/
+            position: relative;
+		}
+		#small{
+			position: relative;
+		}
+		#mask{
+			width: 150px;
+			height: 150px;
+			background-color: rgba(188,188,188,0.4);
+			cursor: move;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			display: none;
+		}
+		#big{
+			width: 400px;
+			height: 400px;
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			left: 360px;
+			display: none;
+			border: 1px solid #ccc;
+		}
+		img{
+			vertical-align: middle;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="small">
+			<img src="./images/kobeSmall.jpg" width="300">
+			<div id="mask"></div>
+		</div>
+		<div id="big">
+			<img src="./images/kobeBig.jpg" width="800">
+		</div>
+	</div>
+</body>
+<script>
+	var box=document.getElementById("box");
+	var small=document.getElementById("small");
+	var mask=document.getElementById("mask");
+	var big=document.getElementById("big");
+	var oImg=big.getElementsByTagName("img")[0];
+	box.onmouseover=function(){
+		mask.style.display="block";
+		big.style.display="block";
+	}
+	box.onmouseout=function(){
+		mask.style.display="none";
+		big.style.display="none";
+	}
+	box.onmousemove=function(e){
+		var mLeft=e.pageX-mask.offsetWidth/2;
+		var mTop=e.pageY-mask.offsetHeight/2;
+		var x=mLeft-100;
+		var y=mTop-100;
+		x=x<0?0:x;
+		y=y<0?0:y;
+		x=x>box.offsetWidth-mask.offsetWidth?box.offsetWidth-mask.offsetWidth:x;
+		y=y>small.offsetHeight-mask.offsetHeight?small.offsetHeight-mask.offsetHeight:y;
+		mask.style.left=x+"px";
+		mask.style.top=y+"px";
+		var imgMaxMove=oImg.offsetWidth-big.offsetWidth;
+		var maskMaxMove=box.offsetWidth-mask.offsetWidth;
+		var iLeft=x*imgMaxMove/maskMaxMove;
+		var iTop=y*imgMaxMove/maskMaxMove;
+		oImg.style.marginLeft=-iLeft+"px";
+		oImg.style.marginTop=-iTop+"px";
+	}
+</script>
+</html>

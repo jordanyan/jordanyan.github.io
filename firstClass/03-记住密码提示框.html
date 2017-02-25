@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>记住密码提示框</title>
+	<style>
+		body{
+			text-align: center;
+		}
+		#txt{
+			display: inline-block;
+		}
+		#warning{
+			width: 150px;
+			height: 50px;
+			font-size: 12px;
+			background: #eddf66;
+			margin: 10px auto;
+			display: none;
+			position: relative;
+			text-align: left;
+		}
+		#warning::before{
+			content: "";
+			border-width: 10px;
+			border-color: transparent transparent #eddf66 transparent ;
+			border-style: solid solid solid solid;
+			position: absolute;
+			top: -20px;
+			left: 66px;
+		}
+	</style>
+</head>
+<body>
+	<div id="txt"><input type="checkbox"><label>记住密码</label></div>
+	<div id="warning">请不要在公共网吧使用此功能</div>
+	<script>
+		var txt=document.getElementById("txt");
+		var warning=document.getElementById("warning");
+		txt.onmouseenter=function(){
+			warning.style.display="block";
+		}
+		txt.onmouseleave=function(){
+			warning.style.display="none";
+		}
+	</script>
+</body>
+</html>

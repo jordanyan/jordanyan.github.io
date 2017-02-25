@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		h3,p,div{
+			margin: 0;
+			padding: 0;
+		}
+		h3{
+			text-align: center;
+		}
+		div{
+			width: 250px;
+			height: 100px;
+			border: 1px solid #000;
+			margin: 20px auto;
+		}
+		p{
+			font-size: 14px;
+			margin: 20px 0 0 10px;
+		}
+	</style>
+</head>
+<body>
+	<h3>这里将显示你按下的键盘的keyCode值</h3>
+	<div>
+		<p>您按下的是:　<span></span>　键</p>
+		<p>它的keyCode值是:　<span></span></p>
+	</div>
+	<script>
+		var oSpans=document.getElementsByTagName("span");
+		document.onkeydown=function(event){
+			var e=event||window.event;
+			if(e.keyCode===32){
+				oSpans[0].innerHTML="空格";
+				oSpans[1].innerHTML=e.keyCode;
+			}else{
+				oSpans[0].innerHTML=e.key;
+				oSpans[1].innerHTML=e.keyCode;
+			}
+			return false;
+		}
+	</script>
+</body>
+</html>

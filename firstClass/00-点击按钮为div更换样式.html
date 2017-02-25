@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>点击按钮为div更换样式</title>
+	<style>
+		body{
+			text-align: center;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: #000;
+			margin: 10px auto;
+		}
+	</style>
+</head>
+<body>
+	<button id="changeWidth">变宽</button>
+	<button id="changeHeight">变高</button>
+	<button id="changeColor">变色</button>
+	<button id="hidden">隐藏</button>
+	<button id="block">重置</button>
+	<div id="dv"></div>
+	<script>
+		function getStyle(elem,attr,value){
+			elem.style[attr]=value;
+		}
+		var oBtn=document.getElementsByTagName("button");
+		var oDv=document.getElementById("dv");
+		var oAttr=["width","height","backgroundColor","display","display"];
+		var oVal=["200px","200px","lightblue","none","block"];
+		for(var i=0,l=oBtn.length;i<l;i++){
+			oBtn[i].index=i;
+			oBtn[i].onclick=function(){
+				getStyle(oDv,oAttr[this.index],oVal[this.index]);
+			}
+		}
+	</script>
+</body>
+</html>

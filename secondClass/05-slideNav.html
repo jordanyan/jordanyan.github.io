@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div,ul,li{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 800px;
+			height: 300px;
+			border: 1px solid #ccc;
+			margin: 100px auto;
+			position: relative;
+			overflow: hidden;
+			border-radius: 8px;
+		}
+		#slide{
+			width: 800px;
+			height: 300px;
+			overflow: hidden;
+			position: relative;
+		}
+		ul{
+			list-style-type: none;
+		}
+		#slide ul{
+			/*width: 2000px;*/
+			overflow: hidden;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+		#slide ul li{
+			float: left;
+			width: 800px;
+			height: 300px;
+			background-color: lightblue;
+			text-align: center;
+			line-height: 300px;
+			font-size: 40px;
+			color: #fff;
+		}
+		.arrow{
+			display: none;
+		}
+		.arrow span{
+			width: 25px;
+			height: 50px;
+			background-color: rgba(0,0,0,.5);
+			color: #fff;
+			font-size: 20px;
+			text-align: center;
+			line-height: 50px;
+			position: absolute;
+			top: 50%;
+			margin-top: -25px;
+			cursor: pointer;
+		}
+		#arrow_left{
+			left: 0;
+		}
+		#arrow_right{
+			right: 0;
+		}
+		ol{
+			list-style: none;
+			position: absolute;
+            left: 50%;
+            bottom: 10px;
+            text-align: center;
+		}
+		ol li{
+			float: left;
+            width: 10px;
+            height: 10px;
+            background: #999;
+            margin-left: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+		}
+		.current {
+            background: #333;
+        }
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="slide">
+			<ul id="ul">
+				<li>picture1</li>
+				<li>picture2</li>
+				<li>picture3</li>
+				<li>picture4</li>
+				<li>picture5</li>
+				<li>picture6</li>
+				<li>picture7</li>
+			</ul>
+			<ol id="ol"></ol>
+		</div>
+		<div class="arrow" id="arrow">
+			<span id="arrow_left">&lt;</span>
+			<span id="arrow_right">&gt;</span>
+		</div>
+	</div>
+</body>
+<script>
+	var box=document.getElementById("box");
+	var ul=document.getElementById("ul");
+	var ol=document.getElementById("ol");
+	var lis=ul.getElementsByTagName("li");
+	var slideWidth=document.getElementById("slide").offsetWidth;
+	var arrow_left=document.getElementById("arrow_left");
+	var arrow_right=document.getElementById("arrow_right");
+	var arrow=document.getElementById("arrow");
+	var pic=0;
+	function animate(elem,target){
+		clearInterval(elem.setId);
+		elem.setId=setInterval(function(){
+			var flag=true;
+			var current=elem.offsetLeft;
+			var step=(target-current)/8;
+			step=step>0?Math.ceil(step):Math.floor(step);
+			if(target != current){
+				flag=false;
+				elem.style.left=current+step+"px";
+			}
+			if(flag){
+				clearInterval(elem.setId);
+			}
+		},40)
+	}
+	for(var i=0,l=lis.length;i<l;i++){
+		var li=document.createElement("li");
+		li.setAttribute("index",i);
+		ol.append(li);
+		li.onmouseover=function(){
+			for(var j=0,l=ol.children.length;j<l;j++){
+				ol.children[j].removeAttribute("class");
+			}
+			this.className="current";
+			var index=this.getAttribute("index");
+			animate(ul,-index*slideWidth);
+			pic=this.getAttribute("index");
+		}
+	}
+	ol.children[0].className="current";
+	ol.style.marginLeft=-(ol.offsetWidth/2)+"px";
+	ul.appendChild(ul.children[0].cloneNode(true));
+	ul.style.width=lis.length*slideWidth+"px";
+	var setId=null;
+	setId=setInterval(fn,2000);
+	box.onmouseover=function(){
+		arrow.style.display="block";
+		clearInterval(setId);
+	}
+	box.onmouseout=function(){
+		arrow.style.display="none";
+		setId=setInterval(fn,2000);
+	}
+	arrow_right.onclick=fn;
+	function fn(){
+		if(pic==lis.length-1){
+			pic=0;
+			ul.style.left=0+"px";
+		}
+		pic++;
+		animate(ul,-pic*slideWidth);
+		if(pic===lis.length-1){
+			ol.children[0].className="current";
+			ol.children[ol.children.length-1].removeAttribute("class");
+		}else{
+			for(var i=0,l=ol.children.length;i<l;i++){
+				ol.children[i].removeAttribute("class");
+			}
+			ol.children[pic].className="current";
+		}
+	}
+	arrow_left.onclick=function(){
+		if(pic==0){
+			pic=lis.length-1;
+			ul.style.left=-pic*slideWidth+"px";
+		}
+		pic--;
+		animate(ul,-pic*slideWidth);
+		for(var i=0;i<ol.children.length;i++){
+            ol.children[i].removeAttribute("class");
+        }
+        ol.children[pic].className="current";
+	}
+</script>
+</html>

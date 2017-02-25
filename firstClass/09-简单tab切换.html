@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #box{
+            width: 400px;
+            height: 400px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        #header{
+            height: 49px;
+            border-bottom: 1px solid #000;
+            background: #000;
+        }
+        #header li{
+            width: 50px;
+            float: left;
+            padding: 0 10px;
+            background: #000;
+            line-height: 50px;
+            text-align: center;
+            color: #fff;
+            cursor: pointer;
+        }
+        #header li.current{
+            background: lightblue;
+        }
+        #content li{
+            /*width: 400px;*/
+            height: 350px;
+            display: none;
+            background: gray;
+            text-align: center;
+            line-height: 350px;
+            color: #fff;
+            font: normal bold 30px/350px "microsoft-YaHei";
+        }
+        #content li.current{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="header">
+            <ul>
+                <li class="current">模块一</li>
+                <li>模块二</li>
+                <li>模块三</li>
+                <li>模块四</li>
+            </ul>
+        </div>
+        <div id="content">
+            <ul>
+                <li class="current">我是模块一的内容</li>
+                <li>我是模块二的内容</li>
+                <li>我是模块三的内容</li>
+                <li>我是模块四的内容</li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    var hLis=document.getElementById("header").getElementsByTagName("li");
+    var cLis=document.getElementById("content").getElementsByTagName("li");
+    for(var i=0,l=hLis.length;i<l;i++){
+        hLis[i].setAttribute("index",i);
+        hLis[i].onmouseenter=function(){
+            for(var j=0;j<hLis.length;j++){
+                hLis[j].className="";
+                cLis[j].className="";
+            }
+            this.className="current";
+            cLis[this.getAttribute("index")].className="current";        
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{
+			width: 100px;
+			height: 100px;
+			background-color: lightblue;
+			position: absolute;
+			top: 50px;
+			left: 50px;
+			margin: 0;
+			padding: 0;
+		}
+		h3{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h3>按下键盘上下左右控制div移动</h3>
+	<div id="box"></div>
+	<script>
+		var box=document.getElementById("box");
+		var oTop=oRight=oDown=oLeft=false;
+			setInterval(function(){
+				if(oTop){
+					box.style.top=box.offsetTop - 10 +"px";
+				}else if(oRight){
+					box.style.left=box.offsetLeft + 10 +"px";
+				}else if(oDown){
+					box.style.top=box.offsetTop + 10 +"px";
+				}else if(oLeft){
+					box.style.left=box.offsetLeft - 10 +"px";
+				}
+				rule();
+			},30);
+
+		document.onkeydown=function(e){
+			var e=event||window.event;
+			switch(e.keyCode){
+				case 38 : oTop=true; break;
+				case 39 : oRight=true; break;
+				case 40 : oDown=true; break;
+				case 37 : oLeft=true; break;
+			}
+			return false;
+		}
+		document.onkeyup=function(e){
+			var e=event||window.event;
+			switch(e.keyCode){
+				case 38 : oTop=false; break;
+				case 39 : oRight=false; break;
+				case 40 : oDown=false; break;
+				case 37 : oLeft=false; break;
+			}
+		}
+		function rule(){
+			var docWidth=document.documentElement.clientWidth;
+			var docHeight=document.documentElement.clientHeight;
+			box.offsetTop<=0&&(box.style.top=0);
+			box.offsetLeft<=0&&(box.style.left=0);
+			docWidth-box.offsetLeft-box.offsetWidth<=0&&(box.style.left=docWidth-box.offsetWidth+"px");
+			docHeight-box.offsetTop-box.offsetHeight<=0&&(box.style.top=docHeight-box.offsetHeight+"px");
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: #ccc;
+		}
+		.box{
+			width: 400px;
+			height: 300px;
+			border: 10px solid #fff;
+			border-radius: 6px;
+			margin: 100px auto;
+			position: relative;
+		}
+		ul{
+			list-style-type: none;
+		}
+		.list li{
+			width: 400px;
+			height: 300px;
+			line-height: 300px;
+			text-align: center;
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			font-size: 50px;
+			color: #fff;
+			font-weight: 900;
+		}
+		.list li.current{
+			opacity: 1.0;
+		}
+		.list li img{
+			width: 100%;
+			height: 100%;
+		}
+		.count{
+			position: absolute;
+			bottom: 15px;
+			right: 15px;
+			overflow: hidden;
+		}
+		.count li{
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			float: left;
+			text-align: center;
+			line-height: 20px;
+			background: yellow;
+			opacity: 0.5;
+			color: #333;
+			font-size: 12px;
+			font-weight: 900;
+			margin-right: 5px;
+			cursor: pointer;
+		}
+		.count li.current{
+			opacity: 1.0;
+		}
+	</style>
+</head>
+<body>
+	<div class="box" id="box">
+		<ul class="list">
+			<li class="current"><img src="./images/img1.jpg" alt=""></li>
+			<li><img src="./images/img2.jpg" alt=""></li>
+			<li><img src="./images/img3.jpg" alt=""></li>
+			<li><img src="./images/img4.jpg" alt=""></li>
+			<li><img src="./images/img5.jpg" alt=""></li>
+			<li><img src="./images/img6.jpg" alt=""></li>
+			<li><img src="./images/img7.jpg" alt=""></li>
+		</ul>
+		<ul class="count">
+			<li class="current">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+		</ul>
+	</div>
+</body>
+<script>
+	var colors =("mediumseagreen,mediumslateblue,mediumspringgreen,mediumturquoise,mediumvioletred,midnightblue").split(',');
+	var box=document.getElementById("box");
+	var oUl=box.getElementsByTagName("ul");
+	var oLis=oUl[0].getElementsByTagName("li");
+	var oNums=oUl[1].getElementsByTagName("li");
+	// for(var i=0,l=oLis.length;i<l;i++){
+	// 	oLis[i].style.backgroundColor=colors[i];
+	// }
+	var timer=play=null;
+	var i=index=0;
+	function show(val){
+		index=val;
+		var alpha=0;
+		for(i=0;i<oNums.length;i++){
+			oNums[i].className="";
+		}
+		oNums[index].className="current";
+		// clearInterval(timer);
+		for(i=0;i<oLis.length;i++){
+			oLis[i].style.opacity=0;
+		}
+		timer=setInterval(function(){
+			alpha+=2;
+			alpha>100&&(alpha=100);
+			oLis[index].style.opacity=alpha/100;
+			alpha==100&&clearInterval(timer);
+		},20)
+
+	}
+	for(var i=0;i<oNums.length;i++){
+		oNums[i].index=i;
+		oNums[i].onmouseover=function(){
+				show(this.index);
+		}
+	}
+	box.onmouseover=function(){
+		clearInterval(play);
+	}
+	box.onmouseout=function(){
+		autoPlay();
+	}
+	function autoPlay(){
+		play=setInterval(function(){
+			index++;
+			index>=oLis.length&&(index=0);
+			show(index);
+		},2000);
+	}
+	autoPlay();
+</script>
+</html>
