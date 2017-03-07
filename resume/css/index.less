@@ -1,7 +1,5 @@
-// @import "./adpater.less";
 @import "./iconfont.less";
-
-body,div,p,h1,h2,h3,h4,ul,li,img{
+body,div,p,h1,h2,h3,h4,ul,li,img,ol{
 	margin: 0;
 	padding: 0;
 }
@@ -18,205 +16,178 @@ body,div,p,h1,h2,h3,h4,ul,li,img{
 }
 img{
 	width: 100%;
-	height: 100%;
+	// height: 100%;
 	vertical-align: middle;
 }
 ul{
 	list-style-type: none;
 }
 .container{
-	width: 1000px;
-	// height: 1200px;
-	margin: 20px auto;
-	border: 1px solid #ccc;
-	border-radius: 10px;
-	position: relative;
-	overflow: hidden;
-	background-color: lightblue;
-	h3{
-		font-size: 25px;
-	}
-	.aside{
-		width: 300px;
-		// height: 100%;
-		position: absolute;
-		left: 0;
-		top: 0;
-		padding: 20px;
-		box-sizing: border-box;
-		.title{
+		width: 900px;
+		// height: 1200px;
+		border: 1px solid #000;
+		border-radius: 10px;
+		overflow: hidden;
+		margin: 50px auto;
+	.aslide{
+		width: 250px;
+		height: 100%;
+		float: left;
+		position: relative;
+		.round{
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			background: radial-gradient(80px at center center,#d5246d,#efa352);
+			position: absolute;
+			top: -40px;
+			left: -40px;
+		}
+		.head{
 			width: 200px;
 			height: 200px;
-			border: 1px solid #000;
 			border-radius: 50%;
 			overflow: hidden;
-			margin: 30px auto;
+			margin: 100px auto 0;
+			overflow: hidden;
 		}
-		.skills_bag{
-			width: 240px;
-			// height: 600px;
-			// border: 1px solid #000;
-			margin: 100px auto 30px;
-			.skills-box{
-				margin: 10px 0 20px 10px;
-				p{
-					margin-bottom: 5px;
-				}
-				.skills_len{
-					width: 200px;
-					height: 20px;
-					border: 1px solid #000;
-					border-radius: 10px;
-					overflow: hidden;
-				}
-				.skills_html{
-					div{
-						width: 80%;
-						height: 100%;
-						background-color: #fff;
-					}
-				}
-				.skills_css{
-					div{
-						width: 80%;
-						height: 100%;
-						background-color: #fff;
-					}
-				}
-				.skills_js{
-					div{
-						width: 60%;
-						height: 100%;
-						background-color: #fff;
-					}
-				}
-				.skills_jq{
-					div{
-						width: 60%;
-						height: 100%;
-						background-color: #fff;
-					}
-				}
-				.skills_ajax{
-					div{
-						width: 60%;
-						height: 100%;
-						background-color: #fff;
-					}
-				}
-				.skills_less{
-					div{
-						width: 50%;
-						height: 100%;
-						background-color: #fff;
-					}
-				}
-			}
-		}
-		.per_hobby{
-			width: 200px;
-			height: 400px;
-			margin: 0 auto;
-			// border: 1px solid #000;
-			padding: 20px;
-			.hobby_box{
-				margin-bottom: 20px;
-				padding: 0 20px;
-				float: left;
-				text-align: center;
-				div{
-					margin-top: 10px;
-					font-size: 60px;
-				}
-				p{
-					font-size: 20px;
-				}
-			}
-			.last{
-				padding: 0;
-			}
+		.f_con{
+			width: 900px;
+			text-align: center;
+			line-height: 2;
+			transform: rotateZ(90deg);
+			transform-origin: left;
+			font-size: 80px;
+			margin-left: 150px;
+			position: absolute;
+			top: 260px;
+			left: -26px;
+			color: #fae1e1;
 		}
 	}
-
-
 	.content{
-		width: 700px;
-		// height: 100%;
-		background-color: pink;
-		margin-left: 300px;
+		width: 650px;
+		height: 100%;
+		margin-left: 250px;
 		overflow: hidden;
-		.per_name{
-			margin: 20px 0 20px 20px;
+		padding: 0 15px;
+		box-sizing: border-box;
+		position: relative;
+		.top_con{
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			text-align: right;
+			p{
+				color: #d8d4ea;
+			}
+			p:nth-child(2){
+				color: #fdf1dd;
+			}
+		}
+		.title{
+			margin-top: 80px;
+			span{
+				font-weight: 700;
+				font-size: 40px;
+			}
 		}
 		.per_info{
-			margin-bottom: 20px;
+			margin-top: 20px;
 			ul{
-				margin-left: 20px;
+				width: 100%;
+				margin-top: 15px;
 				overflow: hidden;
 				li{
 					width: 50%;
 					float: left;
+					a{
+						color: #00796b;
+					}
 				}
 			}
 		}
-		.edu_info{
-			margin-bottom: 20px;
+		.per_edu{
+			margin-top: 20px;
 			ul{
-				margin-left: 20px;
+				margin-top: 15px;
 				overflow: hidden;
 				li{
 					float: left;
-					margin-right: 30px;
+					margin-right: 20px;
 				}
 			}
 		}
-		.pro_skills{
-			margin-bottom: 20px;
+		.per_skills{
+			margin-top: 20px;
 			ul{
-				margin-left: 20px;
+				margin-top: 15px;
 			}
 		}
 		.per_demo{
-			.first_demo,.second_demo{
+			margin-top: 20px;
+			h2{
 				margin-bottom: 20px;
-				.de_title{
-					margin-left: 20px;
-					height: 30px;
-					line-height: 30px;
-					p{
-						float: left;
-						margin-right: 30px;
-						font-weight: 700;
-						font-size: 20px;
-					}
-					ul{
-						li{
-							float: left;
-							margin-right: 20px;
-							a{
-								text-decoration: none;
-								border: 1px solid #000;
-								padding: 2px 6px;
-								border-radius: 8px;
-							}
-						}
-					}
-				}
-				.demo_info{
-					margin: 10px 0 0 20px;
-				}
-				.pic_box{
-					width: 400px;
-					height: 150px;
-					margin: 10px 0 0 20px;
-				}
-				}
-		}
-		.per_eval{
-			margin-bottom: 50px;
+			}
 			ul{
-				margin: 10px 0 0 20px;
+				margin: 0 0 0 10px;
+				border-left: 1px solid #00796b;
+				li{
+					margin: 0 0 10px 20px;
+					position: relative;
+					top: -8px;
+					.circle{
+						width: 10px;
+						height: 10px;
+						border-radius: 50%;
+						background: #00796b;
+						float: left;
+						position: absolute;
+						top: 8px;
+						left: -26px;
+					}
+					h3{
+						float: left;
+					}
+					a{
+						text-decoration: none;
+						margin-left: 15px;
+						border: 1px solid #00796b;
+						border-radius: 10px;
+						padding: 0 10px;
+						color: #00796b;
+					}
+					p{
+						margin-top: 10px;
+					}
+					img{
+						width: 300px;
+					}
+				}
+			}
+			
+		}
+		.per_eva{
+			h2{
+				margin-bottom: 15px;
+			}
+			div{
+				margin-bottom: 20px;
 			}
 		}
+		// .circle_ani{
+		// 	position: absolute;
+		// 	bottom: -40px;
+		// 	right: -40px;
+		// 	border: 1px solid #000;
+		// 	border-radius: 50%;
+		// 	.big-ball{
+		// 		width: 100px;
+		// 		height: 100px;
+		// 		border-radius: 50%;
+		// 		margin: 10px;
+		// 		background: radial-gradient(70px at center,#d11c6e,#6c338b);
+		// 	}
+		// }
 	}
 }
