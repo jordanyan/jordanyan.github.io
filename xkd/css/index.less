@@ -1,0 +1,106 @@
+@import './adapter.less';
+@import './base.less';
+
+.wrapper{
+	background-color: #f4f7f7;
+	.items{
+			padding: 76 / 30rem 20 / 30rem 88 / 30rem;
+		.order{
+			background-color: #fff; 
+			border-radius: 8 / 30rem;
+			padding: 56 / 30rem 20 / 30rem 0;
+			.pay_info{
+				border-bottom: 1px solid #f0f1f2;
+				padding-left: 16 / 30rem;
+				div{
+					font-size: 40 / 30rem;
+					font-weight: 700;
+					color: #333;
+					margin-bottom: 16 / 30rem;
+				}
+				p{
+					font-size: 24 / 30rem;
+					color: #999fa5;
+					margin-bottom: 40 / 30rem;
+				}
+			}
+			.queue_number{
+				padding: 40 / 30rem 0 40 / 30rem 16 / 30rem;
+				border-bottom: 1px solid #f0f1f2;
+				div{
+					color: #999fa5;
+					font-size: 32 / 30rem;
+						p{
+						display: inline-block;
+						float: right;
+						color: #333;
+						font-weight: 700;
+					}
+				}
+				.time{
+					// padding: 40 / 30rem 0 40 / 30rem 0;
+					margin-top: 40 / 30rem;
+				}
+			}
+			.queue_store{
+				padding: 40 / 30rem 0 40 / 30rem 16 / 30rem;
+				border-bottom: 1px dashed #f0f1f2;
+				position: relative;
+				.pubilc{
+					color: #999fa5;
+					font-size: 24 / 30rem;
+					margin-bottom: 15 / 30rem;
+					p{
+						display: inline-block;
+						float: right;
+					}
+				}
+				.circular{
+					position: absolute;
+					width: 32 / 30rem;
+					height: 32 / 30rem;
+					background-color: #f4f7f7;
+					border-radius: 50%;
+					bottom: -16 /30rem;
+				}
+				.left{
+					left: -32 / 30rem;
+				}
+				.right{
+					right: -32 / 30rem;
+				}
+			}
+			.follow{
+				margin-top: 74 / 30rem;
+				.words{
+					text-align: center;
+					p{
+						font-size: 28 / 30rem;
+					}
+					.bold{
+						font-weight: 700;
+						margin: 20 / 30rem 0 24 / 30rem 0;
+					}
+				}
+				.triangle{
+					width: 0;
+					height: 0;
+					border-width: 14 / 30rem;
+					border-color: #999fa5 transparent transparent transparent ;
+					border-style: solid solid solid solid;
+					margin: 0 auto;
+				}
+				.erweima_pic{
+					padding-bottom: 86 / 30rem;
+					.box{
+						width: 222 / 30rem;
+						height:  222 / 30rem;
+						margin: 0 auto;
+						border: 1px solid #000;
+						padding: 6 / 30rem;
+					}
+				}
+			}
+		}
+	}
+}
