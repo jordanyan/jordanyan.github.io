@@ -1,0 +1,92 @@
+@import "./adapter.less";
+@import "./base.less";
+@import "./iconfont.less";
+
+.items{
+	.circle{
+		width: 4 / 30rem;
+		height: 40 / 30rem;
+		margin-left: 26 / 30rem;
+		background-color: #fff;
+		position: relative;
+		&:before{
+			content: "";
+			width: 24 / 30rem;
+			height: 24 / 30rem;
+			border-radius: 50%;
+			background-color: #fff;
+			position: absolute;
+			bottom: -(12 / 30rem);
+			left: -(12 / 30rem);
+		}
+		&:after{
+			content: "";
+			width: 10 / 30rem;
+			height: 10 / 30rem;
+			border-radius: 50%;
+			background-color: #99a0a5;
+			position: absolute;
+			bottom: -(5 / 30rem);
+			left: -(5 / 30rem);
+		}
+	}
+	.illustrate{
+		margin-left: 55 / 30rem;
+		margin-top: -16 / 30rem;
+		p{
+			font-size: 24 / 30rem;
+			color: #999fa5;
+		}
+	}
+	.questionnaire{
+		.fifth_ques{
+			margin-top: 72 / 30rem;
+			border-bottom: 1px dashed #e4e4e4;			
+		}
+		.sixth_ques{
+			margin-top: 72 / 30rem;
+			border-bottom: 1px dashed #e4e4e4;
+			.sixth_ques_stars{
+				margin-left: 44 / 30rem;
+			}		
+		}
+		.seventh_ques{
+			margin-top: 72 / 30rem;
+			border-bottom: 1px dashed #e4e4e4;
+		}
+		.eighth_ques{
+			margin-top: 72 / 30rem;
+			border-bottom: 1px dashed #e4e4e4;
+			.eighth_ques_stars{
+				margin-left: 44 / 30rem;
+			}			
+		}
+		.eleventh_ques{
+			margin-top: 72 / 30rem;
+			border-bottom: 1px dashed #e4e4e4;
+			.gift_number{
+				margin: 72 / 30rem 0;
+				width: 630 / 30rem;
+				border: 1px solid #e4e4e4;
+				.border-radius(10 / 30rem);
+				padding: 24 /30rem 0 24 / 30rem 24 / 30rem;
+				color: #999fa5;
+				font-size: 28 / 30rem;
+			}
+		}
+		.submit_btn{
+			overflow: hidden;
+			.btn{
+				width: 630 / 30rem;
+				height: 88 / 30rem;
+				background-color: #1c436f;
+				.border-radius(10 / 30rem);
+				font-size: 28 / 30rem;
+				color: #fff;
+				text-align: center;
+				line-height: 88 / 30rem;
+				margin: 72 / 30rem auto;
+			}
+		}
+	}
+}

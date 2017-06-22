@@ -1,11 +1,12 @@
 
-html, body, h4, h5, dl, dd, p {
+html, body, h1, h4, h5, dl, dd, p, ul, ol, button{
 	padding: 0;
 	margin: 0;
 }
 
 body {
-	background-color: #f7f4f1;
+	background-color: #f0f3f5;
+	font-family: "Microsoft Yahei";
 }
 
 a {
@@ -17,3 +18,203 @@ img {
 	width: 100%;
 	display: block;
 }
+
+.border-radius(@r) {
+	-webkit-border-radius: @r;
+	-moz-border-radius: @r;
+	-ms-border-radius: @r;
+	-o-border-radius: @r;
+	border-radius: @r;
+}
+
+.box-sizing() {
+	-webkit-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+// 左上角圆圈
+	.circle{
+		width: 4 / 30rem;
+		height: 40 / 30rem;
+		margin-left: 26 / 30rem;
+		background-color: #fff;
+		position: relative;
+		&:before{
+			content: "";
+			width: 24 / 30rem;
+			height: 24 / 30rem;
+			border-radius: 50%;
+			background-color: #fff;
+			position: absolute;
+			bottom: -(12 / 30rem);
+			left: -(12 / 30rem);
+		}
+		&:after{
+			content: "";
+			width: 10 / 30rem;
+			height: 10 / 30rem;
+			border-radius: 50%;
+			background-color: #99a0a5;
+			position: absolute;
+			bottom: -(5 / 30rem);
+			left: -(5 / 30rem);
+		}
+	}
+//顶部文字说明下面问卷调查样式
+	.ques_survey_same{
+		margin: 40 / 30rem 20 / 30rem 0;
+		background-color: #fff;
+		.border-radius(10 / 30rem);
+		padding: 0 20 /30rem;
+		.title{
+				padding: 56 / 30rem 16 / 30rem 40 / 30rem;
+				border-bottom: 1px solid #e4e4e4;
+				h1{
+					font-size: 40 / 30rem;
+					color: #333;
+					margin-bottom: 16 / 30rem;
+				}
+				p{
+					font-size: 24 / 30rem;
+					color: #999fa5;
+					line-height: 32 / 30rem;
+				}
+			}
+	}
+//问卷题目
+	.title_pub{
+			font-size: 32 / 30rem;
+			line-height: 48 / 30rem;
+			font-weight: 700;
+			color: #333;
+	}
+// 单项选择
+	.choose{
+				padding: 72 / 30rem 0 72 / 30rem 70 / 30rem;
+				ul{
+				list-style-type: none;
+				li{
+					position: relative;
+					margin-bottom: 64 / 30rem;
+					&:nth-last-child(1){
+						margin-bottom: 0;
+					}
+					a{
+						position: relative;
+						i{
+							display: block;
+							text-indent: -999999 / 30rem;
+							width: 40 / 30rem;
+							height: 40 / 30rem;
+							background: url("../images/circle.jpg") center no-repeat;
+							background-size: cover;
+							border-radius: 50%; 
+							position: absolute;
+							top: 0;
+							left: -(64 / 30rem);
+						}
+						.add{
+							background: url("../images/blue.png") center no-repeat;
+							background-size: cover;
+						}
+					}
+				}
+				}
+	}
+// 盒子下的两个伪元素生成的半圆形
+	.bottom_triangle{
+		position: relative;
+		.circular{
+			position: absolute;
+			width: 32 / 30rem;
+			height: 32 / 30rem;
+			background-color: #f4f7f7;
+			border-radius: 50%;
+			bottom: -16 /30rem;
+		}
+		.left{
+			left: -32 / 30rem;
+		}
+		.right{
+			right: -32 / 30rem;
+		}
+	}
+// 10个选框的标题和盒子样式
+	.box_title{
+		padding-top: 72 / 30rem;
+		overflow: hidden;
+		p{
+			float: left;
+			font-size: 28 / 30rem;
+			color: #999fa5;
+		}
+		p:nth-child(2){
+			float: right;
+			margin-bottom: 16 / 30rem;
+		}
+	}
+	.box_same{
+				width: 656 / 30rem;
+				height: 62 / 30rem;
+				border: 1px solid #999fa5;
+				.border-radius(10 / 30rem);
+				ul{
+					list-style-type: none;
+					li{
+						float: left;
+						width: 58 / 30rem;
+						height: 62 / 30rem;
+						text-align: center;
+						border-right: 1px solid #999fa5;
+						.box-sizing;
+						a{
+							font-size: 28 / 30rem;
+							color: #333;
+							line-height: 62 / 30rem;
+						}
+						.box_choose{
+							width: 72 / 30rem;
+							height: 72 / 30rem;
+							font-size: 28 / 30rem;
+							color: #fff;
+							background-color: #1c436f;
+							line-height: 72 / 30rem;
+						}
+					}
+					li:nth-last-child(1){
+						border: 0;
+					}
+				}
+	}
+// 五角星打分评价	
+	.five_stars{
+					margin: 72 / 30rem 0;
+					p{
+						font-size: 28 / 30rem;
+						color: #333;
+					}
+					ul{
+						list-style-type: none;
+						overflow: hidden;
+						li{
+							float: left;
+							margin-top: 24 / 30rem;
+							margin-right: 40 / 30rem;
+							text-align: center;
+							a{
+								display: block;
+								width: 40 / 30rem;
+								height: 40 / 30rem;
+								i{
+									color: #1c436f;
+								}
+								.change_color{
+									color: #dadada;
+								}
+							}
+						}
+					}
+	}
