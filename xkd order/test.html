@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+</head>
+<script>
+$(function(){
+	$('.select label').click(function(){
+		if(!$(this).hasClass('on')){
+			$(this).addClass('on').siblings().removeClass('on');
+			$('#selectInput').val($(this).attr('data-val'));
+		}
+	})
+})
+</script>
+<style>
+*{
+	margin:0; padding:0;
+}
+.select label{
+	float:left; margin-right:10px;
+}
+.select i{
+	float:left; width:14px; height:14px; display:block; margin:2px 5px 0 0; background:url(radio.gif) no-repeat;
+}
+.select .on i{
+	background-position:0 -14px;
+}
+</style>
+<body>
+<div class="select">
+<label data-val="1"><i></i>选项1</label>
+<label data-val="2"><i></i>选项2</label>
+<label data-val="3"><i></i>选项3</label>
+<label data-val="4"><i></i>选项4</label>
+<input type="hidden" name="select" id="selectInput" />
+</div>
+</body>
+</html>

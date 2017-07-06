@@ -1,0 +1,155 @@
+@import "./adapter.less";
+@import "./base.less";
+
+.all_evaluate{
+	.evaluate_list{
+		padding: 40 / 30rem 40 / 30rem 0 40 / 30rem;
+		background-color: #fff;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		.item{
+			ul{
+				overflow: hidden;
+				li{
+					float: left;
+					margin-bottom: 24 / 30rem;
+					margin-right: 14 / 30rem;
+					.same{
+						padding: 16 / 30rem 24 / 30rem;
+						border-radius: 30 / 30rem;
+						font-size: 24 / 30rem;
+						line-height: 24 / 30rem;
+						color: #333;
+						border: 1px solid #999fa5;
+					}
+					.select{
+						padding: 16 / 30rem 24 / 30rem;
+						border-radius: 30 / 30rem;
+						font-size: 24 / 30rem;
+						line-height: 24 / 30rem;
+						background-color: #1c436f;
+						border-radius: 30 / 30rem;
+						color: #fff;
+					}
+				}
+			}
+		}
+		.down_arr{
+			height: 36 / 30rem;
+			line-height: 36 / 30rem;
+			text-align: center;
+			a{
+				i{
+					display: inline-block;
+					width: 14 / 30rem;
+					height: 24 / 30rem;
+					transform: rotate(90deg);
+					background: url("../images/right_arr.png") center no-repeat;
+					background-size: cover;
+				}
+			}
+		}
+	}
+	.evaluate_item{
+		background-color: #fff;
+		margin-top: 237 / 30rem;
+		.user_eval{
+			padding: 64 / 30rem 0;
+			border-top: 1px solid #e4e4e4;
+			margin: 0 40 / 30rem;
+			.user_info{
+				height: 56 / 30rem;
+				line-height: 56 / 30rem;
+				.selfie{
+					width: 56 / 30rem;
+					height: 56 / 30rem;
+					border-radius: 50%;
+					float: left;
+					margin-right: 16 / 30rem;
+				}
+				.user_name{
+					float: left;
+					p{
+						font-size: 32 / 30rem;
+						font-weight: 700;
+						color: #333;
+					}
+				}
+				.date{
+					float: right;
+					p{
+						font-size: 24 / 30rem;
+						color: #999fa5;
+					}
+				}
+			}
+			.eval_stars{
+				margin-left: 70 / 30rem;
+				margin-bottom: 24 / 30rem;
+				.five_stars{
+					overflow: hidden;
+					line-height: 24 / 30rem;
+					p{
+						float: left;
+						font-size: 24 / 30rem;
+						color: #999fa5;
+						margin-right: 8 / 30rem;
+					}
+					.stars{
+						float: left;
+						ul{
+							overflow: hidden;
+							li{
+								float: left;
+								width: 16 / 30rem;
+								height: 16 / 30rem;
+								margin-right: 8 / 30rem;
+								a{
+									height: 100%;
+									background: url("../images/star.png") center no-repeat;
+									background-size: cover;
+								}
+							}
+						}
+					}
+				}
+			}
+			.service_type{
+				margin-left: 70 / 30rem;
+				p{
+					display: inline-block;
+					font-size: 24 / 30rem;
+					color: #999fa5;
+					line-height: 32 / 30rem;
+					padding-right: 8 / 30rem;
+				}
+				span{
+					font-size: 24 / 30rem;
+					color: #999fa5;
+					line-height: 32 / 30rem;
+				}
+			}
+			.eval_words{
+				padding: 48 / 30rem 0 64 / 30rem 70 / 30rem;
+				p{
+					font-size: 28 / 30rem;
+					line-height: 44 / 30rem;
+					color: #333;
+					text-indent: 40 / 30rem;
+				}
+			}
+		}
+	}
+	.footer{
+		height: 328 / 30rem;
+		background-color: #f0f3f5;
+		overflow: hidden;
+		.xkd_logo{
+				width: 376 / 30rem;
+				height: 76 / 30rem;
+				margin: 132 / 30rem auto;
+		}
+	}
+}

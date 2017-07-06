@@ -1,0 +1,219 @@
+@import "./adapter.less";
+@import "base.less";
+
+.refund{
+	.drop_water{
+		margin-left: 26 / 30rem;
+		.drop_line{
+			width: 4 / 30rem;
+			height: 40 / 30rem;
+			background-color: #fff;
+			position: relative;
+			&:before{
+				content: "";
+				width: 24 / 30rem;
+				height: 24 / 30rem;
+				border-radius: 50%;
+				background-color: #fff;
+				position: absolute;
+				bottom: -24 / 30rem;
+				left: -10 / 30rem;
+			}
+			&:after{
+				content: "";
+				width: 10 / 30rem;
+				height: 10 / 30rem;
+				border-radius: 50%;
+				background-color: #999fa5;
+				position: absolute;
+				bottom: -17 / 30rem;
+				left: -3 / 30rem;
+			}
+		}
+	}
+	.refund_info{
+		margin: 32 / 30rem 20 / 30rem 0 20 / 30rem;
+		background-color: #fff;
+		border-radius: 10 / 30rem;
+		.refund_go{
+			text-align: center;
+			border-bottom: 1px dashed #e4e4e4;
+			position: relative;
+			padding-top: 80 / 30rem;
+			padding-bottom: 45 / 30rem;
+			&:before{
+					content: "";
+					width: 32 / 30rem;
+					height: 32 / 30rem;
+					background-color: #f0f3f5;
+					border-radius: 50%;
+					position: absolute;
+					left: -16 / 30rem;
+					bottom: -16 / 30rem;
+				}
+			&:after{
+				content: "";
+				width: 32 / 30rem;
+				height: 32 / 30rem;
+				background-color: #f0f3f5;
+				border-radius: 50%;
+				position: absolute;
+				right: -16 / 30rem;
+				bottom: -16 / 30rem;
+			}
+			.go{
+				display: inline-block;
+				width: 124 / 30rem;
+				height: 124 / 30rem;
+				margin-bottom: 24 / 30rem;
+			}
+			h1{
+				font-size: 32 / 30rem;
+				line-height: 32 / 30rem;
+				color: #333;
+				margin-bottom: 16 / 30rem;
+			}
+			p{
+				font-size: 24 / 30rem;
+				color: #999fa5;
+				line-height: 24 / 30rem;
+			}
+		}
+		.stroe{
+			margin: 0 20 / 30rem;
+			.stroe_name{
+				height: 112 / 30rem;
+				line-height: 112 / 30rem;
+				border-bottom: 1px solid #e4e4e4;
+				padding-left: 16 / 30rem;
+				padding-top: 16 / 30rem;
+				position: relative;
+				h1{
+					font-size: 32 /30rem;
+					color: #333;
+				}
+				a{
+					width: 14 / 30rem;
+					height: 24 / 30rem;
+					background: url("../images/right_arr.png") center no-repeat;
+					background-size: cover;
+					position: absolute;
+					top: 50%;
+					margin-top: -12 / 30rem;
+					right: 0;
+				}
+			}
+			.ser_process{
+				padding: 40 / 30rem 0 40 / 30rem 16 / 30rem;;
+				border-bottom: 1px solid #e4e4e4;
+				overflow: hidden;
+				.pic_show{
+					width: 200 / 30rem;
+					height: 200 / 30rem;
+					float: left;
+					margin-right: 24 / 30rem;
+				}
+				.ser_info{
+					p{
+						line-height: 1;
+					}
+					p:nth-child(1){
+						font-size: 28 / 30rem;
+						color: #333;
+					}
+					p:nth-child(2){
+						font-size: 24 / 30rem;
+						color: #999fa5;
+						margin: 24 / 30rem 0 20 / 30rem 0;
+					}
+					p:nth-child(3){
+						font-size: 24 / 30rem;
+						color: #999fa5;
+						line-height: 32 / 30rem;
+						span{
+							white-space:nowrap;
+						}
+					}
+				}
+			}
+			.amount{
+				height: 112 / 30rem;
+				border-bottom: 1px solid #e4e4e4;
+				line-height: 112 / 30rem;
+				.amount_info{
+					text-align: right;
+					padding-right: 34 / 30rem;
+					p{
+						display: inline-block;
+					}
+					p:nth-child(1){
+						font-size: 24 / 30rem;
+						color: #999fa5;
+						padding-right: 27 / 30rem;
+						span{
+							font-size: 24 / 30rem;
+							color: #999fa5;
+						}
+					}
+					p:nth-child(2){
+						font-size: 32 / 30rem;
+						color: #999fa5;
+						font-weight: 700;
+						line-height: 32 / 30rem;
+						span{
+							font-size: 32 / 30rem;
+							color: #999fa5;
+							font-weight: 700;
+						}
+					}
+				}
+			}
+			.order{
+				padding: 40 / 30rem 0 40 / 30rem 16 / 30rem;
+				position: relative;
+				div{
+					p{
+						font-size: 24 / 30rem;
+						color: #999fa5;
+					}
+				}
+				.oider_time{
+					p{
+						margin: 20 / 30rem 0;
+					}
+				}
+				.copy{
+					position: absolute;
+					top: 40 / 30rem;
+					right: 34 / 30rem;
+					padding-left: 34 / 30rem;
+					border-left: 1px solid #e4e4e4;
+					a{
+						font-size: 24 / 30rem;
+						color: #1c436f;
+						font-weight: 700;
+					}
+				}
+			}
+		}
+	}
+	.custom_service{
+		height: 328 / 30rem;
+		text-align: center;
+		background: #f0f3f5;
+		.custom_service_num{
+			padding-top: 132 / 30rem;
+			margin-bottom: 24 / 30rem;
+			a{
+				color: #1c436f;
+				font-size: 24 / 30rem;
+			}
+		}
+		.custom_service_time{
+			p{
+				font-size: 24 / 30rem;
+				color: #999fa5;
+			}
+		}
+	}
+}

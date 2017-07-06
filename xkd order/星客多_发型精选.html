@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>星客多-发型精选</title>
+	<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+	<!-- <link rel="stylesheet/less" href="./css/faxingjingxuan.less">
+	<script src="./js/less.js"></script> -->
+	<link rel="stylesheet" href="./css/faxingjingxuan.css">
+</head>
+<body>
+	<div class="hair">
+		<!-- 分类选项 -->
+		<div class="classify">
+			<ul>
+				<li><a class="active" data-cont="all" href="javascript:void(0)">全部</a></li>
+				<li><a data-cont="my" href="javascript:void(0)">我的</a></li>
+				<li><a data-cont="man" href="javascript:void(0)">男士</a></li>
+				<li><a data-cont="woman" href="javascript:void(0)">女士</a></li>
+				<li><a data-cont="liuHai" href="javascript:void(0)">刘海</a></li>
+				<li><a data-cont="child" href="javascript:void(0)">儿童</a></li>
+			</ul>
+		</div>
+		<!-- 发型图示 -->
+		<div class="hair_pic">
+			<ul>
+				<li class="all">
+					
+				</li>
+				<li>
+					<div class="business pic_pub" id="my">
+						<div class="pic_same">
+							<img src="./images/2.jpg" alt="蘑菇头">
+							<p class="explain">居家必备</p>
+						</div>
+						<p class="hair_name">清爽蘑菇头</p>
+						<p class="hair_eng">Business</p>
+					</div>
+				</li>
+				<li>
+					<div class="gaoyuanyuan pic_pub">
+						<div class="pic_same">
+							<img src="./images/3.jpg" alt="高媛媛">
+							<p class="explain">休闲人士</p>
+						</div>
+						<p class="hair_name">高媛媛</p>
+						<p class="hair_eng">Business</p>
+					</div>
+				</li>
+				<li>
+					<div class="zuimei pic_pub">
+						<div class="pic_same">
+							<img src="./images/15.jpg" alt="最美翻译官">
+							<p class="explain">居家必备</p>
+						</div>
+						<p class="hair_name">最美翻译官</p>
+						<p class="hair_eng">Holiday</p>
+					</div>
+					<div class="my_style pic_pub" id="all">
+						<div class="pic_same">
+							<img src="./images/13.jpg" alt="冬日恋歌">
+							<p class="explain">参考发型</p>
+						</div>
+						<p class="hair_name">冬日恋歌</p>
+						<p class="hair_eng">My style</p>
+					</div>
+				</li>
+				<li>
+					<div class="laoban pic_pub">
+						<div class="pic_same">
+							<img src="./images/20.jpg" alt="老板的样子">
+							<p class="explain">居家必备</p>
+						</div>
+						<p class="hair_name">老板的样子</p>
+						<p class="hair_eng">Business</p>
+					</div>
+					<div class="laoban pic_pub">
+						<div class="pic_same">
+							<img src="./images/20.jpg" alt="老板的样子">
+							<p class="explain">居家必备</p>
+						</div>
+						<p class="hair_name">老板的样子</p>
+						<p class="hair_eng">Business</p>
+					</div>
+				</li>
+				<li>
+					<div class="xueshengmei pic_pub">
+						<div class="pic_same">
+							<img src="./images/5.jpg" alt="学生妹">
+							<p class="explain">居家必备</p>
+						</div>
+						<p class="hair_name">学生妹</p>
+						<p class="hair_eng">Holiday</p>
+					</div>
+					<div class="xueshengmei pic_pub">
+						<div class="pic_same">
+							<img src="./images/5.jpg" alt="学生妹">
+							<p class="explain">居家必备</p>
+						</div>
+						<p class="hair_name">学生妹</p>
+						<p class="hair_eng">Holiday</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- 底部 -->
+		<div class="footer">
+			<div class="xkd_logo">
+				<img src="./images/xkd.png" alt="">
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	var hair=document.querySelector(".hair_pic");
+	var ul=hair.querySelector("ul");
+	var lis=hair.querySelectorAll("li");
+	var pic_pub=document.querySelectorAll(".pic_pub");
+	var all=document.querySelector(".all");
+	var lis,size,width;
+	//设置发型展示区距离顶部的距离
+	var classify_height=document.querySelector(".classify").offsetHeight;
+	hair.style.marginTop=classify_height+"px";
+	//将其他发型添加到全部中
+	for(var z=1;z<lis.length;z++){
+		var s=lis[z].children.length;
+		for(var j=0;j<s;j++){
+			all.appendChild(lis[z].children[j].cloneNode(true));
+		}
+	}
+	function setClass(){
+		//获取li元素的长度		
+		size=lis.length;
+
+		setWidth()
+	}
+
+	setClass();
+
+	function setWidth(){
+		//获取宽度
+		width=hair.clientWidth;
+
+		ul.style.width=size*width+"px";
+
+		for(var i=0;i<size;i++){
+			//给每一个li设置宽度
+			lis[i].style.width=width+"px";
+		}
+	}
+
+	window.addEventListener('resize', function () {
+			// 设置宽度
+			setWidth();
+	});
+	
+	//获取所有a元素
+		var aLinks=document.querySelectorAll(".classify a");
+		var i=0,l=aLinks.length;
+	//点击按钮为该按钮添加样式
+		for(var i=0;i<l;i++){
+			aLinks[i].setAttribute("index",i);
+			aLinks[i].addEventListener("click",function(){
+				for(var j=0;j<l;j++){
+					aLinks[j].classList.remove("active");
+				}
+				this.classList.add("active");
+				var num=this.getAttribute("index");
+				ul.style.transition="left 0.5s";
+				ul.style.left=-num*width+"px";
+			});
+		}
+</script>
+</html>

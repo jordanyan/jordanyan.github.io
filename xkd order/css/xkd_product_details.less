@@ -1,0 +1,232 @@
+@import "./adapter.less";
+@import "base.less";
+
+.commodity{
+	.drop_water{
+		margin-left: 26 / 30rem;
+		.drop_line{
+			width: 4 / 30rem;
+			height: 40 / 30rem;
+			background-color: #fff;
+			position: relative;
+			&:before{
+				content: "";
+				width: 24 / 30rem;
+				height: 24 / 30rem;
+				border-radius: 50%;
+				background-color: #fff;
+				position: absolute;
+				bottom: -24 / 30rem;
+				left: -10 / 30rem;
+			}
+			&:after{
+				content: "";
+				width: 10 / 30rem;
+				height: 10 / 30rem;
+				border-radius: 50%;
+				background-color: #999fa5;
+				position: absolute;
+				bottom: -17 / 30rem;
+				left: -3 / 30rem;
+			}
+		}
+	}
+	.store{
+		margin: 32 / 30rem 20 / 30rem 0 20 / 30rem;
+		background-color: #fff;
+		border-radius: 10 / 30rem;
+		.store_tit{
+			margin: 0 20 / 30rem;
+			border-bottom: 1px solid #e4e4e4;
+			padding: 40 / 30rem 0 40 / 30rem 16 / 30rem;
+			h1{
+				color: #333;
+				margin-bottom: 16 / 30rem;
+				line-height: 1;
+			}
+			p{
+				font-size: 24 / 30rem;
+				color: #999fa5;
+			}
+		}
+		.stroe_info{
+			margin: 0 20 / 30rem;
+			.stroe_box{
+				overflow: hidden;
+				border-bottom: 1px solid #e4e4e4;
+				padding: 40 / 30rem 16 / 30rem;
+				.show_pic{
+					width: 200 / 30rem;
+					height: 200 / 30rem;
+					float: left;
+					margin-right: 24 / 30rem;
+				}
+				.stroe_words{
+					p:nth-child(1){
+						font-size: 28 / 30rem;
+						color: #333;
+						line-height: 44 / 30rem;
+					}
+					.buy_num{
+						color: #999fa5;
+						font-size: 24 / 30rem;
+						line-height: 24 / 30rem;
+						margin:  16 / 30rem 0 25 / 30rem 0;
+						span{
+							color: #999fa5;
+							font-size: 24 / 30rem;
+							line-height: 24 / 30rem;
+						}
+					}
+					.price{
+						color: #999fa5;
+						font-size: 24 / 30rem;
+						line-height: 24 / 30rem;
+						span{
+							color: #999fa5;
+							font-size: 24 / 30rem;
+							line-height: 24 / 30rem;
+						}
+					}
+				}
+			}
+			.pay_money{
+				text-align: right;
+				padding: 48 / 30rem 0;
+				border-bottom: 1px dashed #e4e4e4;
+				position: relative;
+				&:before{
+					content: "";
+					width: 32 / 30rem;
+					height: 32 / 30rem;
+					background-color: #f0f3f5;
+					border-radius: 50%;
+					position: absolute;
+					left: -32 / 30rem;
+					bottom: -16 / 30rem;
+				}
+				&:after{
+					content: "";
+					width: 32 / 30rem;
+					height: 32 / 30rem;
+					background-color: #f0f3f5;
+					border-radius: 50%;
+					position: absolute;
+					right: -32 / 30rem;
+					bottom: -16 / 30rem;
+				}
+				.youhui{
+					padding-bottom: 24 / 30rem;
+					font-size: 24 / 30rem;
+					line-height: 24 / 30rem;
+					color: #999fa5;
+					span{
+						font-size: 24 / 30rem;
+						line-height: 24 / 30rem;
+						color: #999fa5;
+					}
+				}
+				.actual_pay{
+					font-size: 28 / 30rem;
+					line-height: 28 / 30rem;
+					color: #1c436f;
+					span{
+						font-size: 28 / 30rem;
+						line-height: 28 / 30rem;
+						color: #1c436f;
+					}
+				}
+			}
+			.take_goods{
+				padding: 56 / 30rem 16 / 30rem;
+				h1{
+					font-size: 32 / 30rem;
+					color: #333;
+					line-height: 32 / 30rem;
+					margin-bottom: 48 / 30rem;
+				}
+				ul{
+					margin-left: 36 / 30rem;
+					padding-right: 90 / 30rem;
+					position: relative;
+					li{
+						list-style-type: disc;
+						color: #63686e;
+						font-size: 28 / 30rem;
+						line-height: 28 / 30rem;
+					}
+					li:first-child{
+						margin-bottom: 24 / 30rem;
+					}
+					li:nth-child(3){
+						list-style-type: none;
+						position: absolute;
+						right: 0;
+						bottom: 30 / 30rem;
+						a{
+							font-style: 24 / 30rem;
+							line-height: 24 / 30rem;
+							color: #1c436f;
+							padding-left: 32 / 30rem;
+							border-left: 1px solid #e4e4e4;
+						}
+					}
+				}
+			}
+		}
+	}
+	.order{
+			margin: 40 / 30rem 20 / 30rem 0 20 / 30rem;
+			position: relative;
+			background-color: #fff;
+			padding: 72 / 30rem 36 / 30rem;
+			border-radius: 10 / 30rem;
+			div{
+				p{
+					font-size: 24 / 30rem;
+					color: #63686e;
+					line-height: 24 / 30rem;
+				}
+				span{
+					font-size: 24 / 30rem;
+					color: #63686e;
+				}
+			}
+			.oider_time{
+				p{
+					margin: 32 / 30rem 0;
+				}
+			}
+			.copy{
+				position: absolute;
+				top: 72 / 30rem;
+				right: 36 / 30rem;
+				padding-left: 42 / 30rem;
+				border-left: 1px solid #e4e4e4;
+				a{
+					font-size: 24 / 30rem;
+					color: #1c436f;
+					line-height: 24 / 30rem;
+				}
+			}
+	}
+	.custom_service{
+		height: 328 / 30rem;
+		text-align: center;
+		background: #f0f3f5;
+		.custom_service_num{
+			padding-top: 132 / 30rem;
+			margin-bottom: 24 / 30rem;
+			a{
+				color: #1c436f;
+				font-size: 24 / 30rem;
+			}
+		}
+		.custom_service_time{
+			p{
+				font-size: 24 / 30rem;
+				color: #999fa5;
+			}
+		}
+	}
+}

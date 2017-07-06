@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>星客多-退款理由</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<!-- <link rel="stylesheet/less" href="./css/xkd_refund_reason.less">
+	<script src="./js/less.js"></script> -->
+	<link rel="stylesheet" href="./css/xkd_refund_reason.css">
+</head>
+<body>
+	<div class="refund_reason">
+		<!-- 小雨滴 -->
+		<div class="drop_water">
+			<div class="drop_line"></div>
+		</div>
+		<!-- 退款原因栏 -->
+		<div class="reason_item">
+			<!-- 顶部文字说明 -->
+			<div class="top_title">
+				<h1>退款原因</h1>
+				<p>请选择退款原因, 我们会尽快为您办理退款</p>
+			</div>
+			<!-- 原因选项 -->
+			<div class="reason_choose">
+				<ul>
+					<li><a href="javascript:;">突然不想剪发了<i></i></a></li>
+					<li><a href="javascript:;">计划有变暂时不能剪发<i></i></a></li>
+					<li><a href="javascript:;">重复下单/操作有误 (服务、时间、门店等信息选择错误)<i></i></a></li>
+					<li><a href="javascript:;">价格太贵, 其他美发店更便宜<i></i></a></li>
+					<li><a href="javascript:;">有优惠券未使用<i></i></a></li>
+					<li><a href="javascript:;">朋友/网友评价不好<i></i></a></li>
+					<li><a href="javascript:;">找不到门店<i></i></a></li>
+					<li><a href="javascript:;">等太久, 未再承诺时间剪发<i></i></a></li>
+					<li><a href="javascript:;">其他<i class="current"></i></a></li>
+				</ul>
+				<div class="else_suggest">
+					<textarea placeholder="其他意见和建议(选填)"></textarea>
+				</div>
+				<div class="submite">
+					<button>完成</button>
+				</div>
+			</div>
+			<!-- 致歉 -->
+			<div class="excuse">
+				<p>给您造成不好的体验</p>
+				<p>我们再次深表歉意</p>
+				<p>希望您下次再次光临星客多XINGKEDUO</p>
+			</div>
+		</div>
+		<!-- 客服电话及上班时间-->
+		<div class="custom_service">
+			<div class="custom_service_num">
+				<a href="javascript:void(0)">客服电话: 400-6555200</a>
+			</div>
+			<div class="custom_service_time">
+				<p>客服时间: 09:00-21:00 周一至周日</p>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	var all=document.querySelector(".reason_choose");
+	var ul=all.querySelector("ul");
+	var alinks=ul.querySelectorAll("a");
+	var i=0,l=alinks.length;
+	for(;i<l;i++){
+		alinks[i].onclick=function(){
+			for(var j=0;j<l;j++){
+				alinks[j].children[0].className="";
+			}
+			this.children[0].className="current";
+		}
+	}
+</script>
+</html>

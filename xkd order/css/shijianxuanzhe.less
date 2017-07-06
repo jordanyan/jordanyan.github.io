@@ -1,0 +1,169 @@
+@import "./adapter.less";
+@import "base.less";
+
+.items{
+	.service_time{
+		background-color: #fff;
+		padding-left: 40 / 30rem;
+		h1{
+			padding: 40 / 30rem 0 16 / 30rem 0;
+			font-size: 40 / 30rem;
+			color: #333;
+		}
+		p{
+			font-size: 24 / 30rem;
+			color: #999fa5;
+			padding-bottom: 40 / 30rem;
+		}
+	}
+	.week{
+		padding-left: 40 / 30rem;
+		background-color: #f4f4f4;
+		border-top: 1px solid #e4e4e4;
+		border-bottom: 1px solid #e4e4e4;
+		height: 112 / 30rem;
+		.week_box{
+			ul{
+				li{
+					width: 120 / 30rem;
+					height: 112 / 30rem;
+					float: left; 
+					text-align: center;
+					a{
+						width: 100%;
+						height: 100%;						
+						.week_num{
+							font-size: 28 / 30rem;
+							padding-top: 24 / 30rem;
+							color: #333;
+						}
+						.week_date{
+							font-size: 24 / 30rem;
+							color: #999fa5;
+						}
+					}
+					.choose_week{
+							background-color: #1c436f;
+							position: relative;
+							p{
+								color: #fff;
+							}
+							&:before{
+								content: "";
+								border-width: 12 / 30rem;
+								border-color: #1c436f transparent transparent transparent ;
+								border-style: solid solid solid solid;
+								position: absolute;
+								left: 50%;
+								margin-left: -12 / 30rem;
+								bottom: -24 / 30rem;
+							}
+					}
+				}
+				.last_box{
+					width: 110 / 30rem;
+					background-color: #e4e4e4;
+					p{
+						font-size: 28 / 30rem;
+						color: #333;
+					}
+				}
+			}
+		}
+	}
+	.order_time{
+		padding: 24 / 30rem 40 / 30rem 0;
+		overflow: hidden;
+		background-color: #fff;
+		ul{
+			li{
+				width: 204 / 30rem;
+				height: 76 / 30rem;
+				float: left;
+				background-color: #fff;
+				border: 1px solid #63686e;
+				text-align: center;
+				.border-radius(10 / 30rem);
+				.box-sizing;
+				line-height: 76 / 30rem;
+				margin-bottom: 24 / 30rem;	
+				margin-right: 29 / 30rem;	
+				a{
+					.order_num{
+						color: #333;
+						font-size: 28 / 30rem;
+					}
+				}
+			}
+			.btn_box{
+				margin-right: 0;
+			}
+			.order_mai{
+				background-color: #f4f4f4;
+				border: 1px solid #e4e4e4;
+				line-height: normal;
+				.order_num{
+					font-size: 28 / 30rem;
+					color: #999fa5;
+				}
+				.order_con{
+					font-size: 20 / 30rem;
+					color: #999fa5;
+				}
+			}
+			.order_yuyue{
+				position: relative;
+				border: 1px solid #1c436f;
+				p{
+					color: #1c436f;
+				}
+				&:before{
+					content: "";
+					width: 44 / 30rem;
+					height: 44 / 30rem;
+					background: url("../images/dagou.png") center no-repeat;
+					background-size: cover;
+					position: absolute;
+					bottom: 0;
+					right: 0;
+				}
+			}
+		}
+	}
+	.sub_time{
+		background-color: #fff;
+		overflow: hidden;
+		position: absolute;
+		bottom: 0;
+		.sub_info{
+			width: 420 / 30rem;
+			height: 98 / 30rem;
+			line-height: 98 / 30rem;
+			float: left;
+			padding-left: 40 / 30rem;
+			.box-sizing;
+			.info_title{
+				font-size: 32 / 30rem;
+				color: #1c436f;
+				font-weight: 700;
+				p{
+					font-size: 32 / 30rem;
+					color: #1c436f;
+					font-weight: 700;
+				}
+			}
+		}
+		.sub_btn{
+			width: 330 / 30rem;
+			height: 98 / 30rem;
+			background-color: #1b446f;
+			text-align: center;
+			line-height: 98 / 30rem;
+			float: right;
+			a{
+				font-size: 32 / 30rem;
+				color: #fff;
+			}
+		}
+	}
+} 

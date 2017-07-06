@@ -1,0 +1,260 @@
+@import "./adapter.less";
+@import "./base.less";
+
+.order_list{
+	.order_option{
+		height: 98 / 30rem;
+		border-bottom: 1px solid #e4e4e4;
+		padding: 0 40 / 30rem;
+		background-color: #fff;
+		box-sizing: border-box;
+		position: fixed;
+		z-index: 6;
+		top: 0;
+		left: 0;
+		right: 0;
+		ul{
+			overflow: hidden;
+			padding-top: 20 / 30rem;
+			// padding-left: 24 / 30rem;
+			// padding-right: 24 / 30rem;
+			li{
+				float: left;
+				text-align: center;
+				margin-right: 30 / 30rem;
+				a{	
+					padding: 16 / 30rem 10 / 30rem;
+					font-size: 24 / 30rem;
+					line-height: 24 / 30rem;
+					color: #333;
+					// border-radius: 30 / 30rem;
+				}
+				a.select{
+					padding: 16 / 30rem 24 / 30rem;
+					font-size: 24 / 30rem;
+					line-height: 24 / 30rem;
+					border-radius: 30 / 30rem;
+					background-color: #1c436f;
+					border-radius: 30 / 30rem;
+					color: #fff;
+				}
+			}
+			li:last-child{
+				margin-right: 0;
+				// float: right;
+			}
+		}
+	}
+
+	.items{
+		overflow: hidden;
+		.slide{
+			overflow: hidden;
+			position: relative;
+			left: 0;
+			.box{
+				float: left;
+				box-sizing: border-box;
+			}
+		}
+	}
+	
+
+
+
+
+
+
+	.order_con{
+		background-color: #fff;
+		// border-top: 1px solid #e4e4e4;
+		// border-bottom: 1px solid #e4e4e4;
+		.service_mod{
+			margin: 0 40 / 30rem;
+			border-bottom: 1px solid #e4e4e4;
+			height: 112 / 30rem;
+			line-height: 112 / 30rem;
+			.stroe_name{
+				float: left;
+				font-size: 32 / 30rem;
+				font-weight: 700;
+				color: #333;
+			}
+			.state{
+				float: right;
+				font-size: 24 / 30rem;
+				color: #999fa5;
+			}
+		}
+		.service_info{
+			padding: 40 / 30rem;
+			.show_pic{
+				float: left;
+				width: 200 / 30rem;
+				height: 200 / 30rem;
+				margin-right: 24 / 30rem;
+			}
+			.introduce{
+				p{
+					line-height: 1;
+				}
+				p:nth-child(1){
+					font-size: 28 / 30rem;
+					line-height: 28 / 30rem;
+					color: #333;
+				}
+				p:nth-child(2){
+					font-size: 24 / 30rem;
+					line-height: 24 / 30rem;
+					color: #999fa5;
+					margin: 24 / 30rem 0 20 / 30rem 0;
+				}
+				p:nth-child(3){
+					font-size: 24 / 30rem;
+					line-height: 32 / 30rem;
+					color: #999fa5;
+					margin: 24 / 30rem 0 20 / 30rem 0;
+					span{
+						word-break:keep-all;
+					}
+				}
+			}
+		}
+		.detailed_bill{
+			margin: 0 40 / 30rem;
+			height: 88 / 30rem;
+			line-height: 88 / 30rem;
+			border-top: 1px solid #e4e4e4;
+			border-bottom: 1px solid #e4e4e4;
+			overflow: hidden;
+			text-align: right;
+			div{
+				display: inline-block;
+				p{
+					font-size: 24 / 30rem;
+					color: #999fa5;
+					line-height: 24 / 30rem;
+				}
+			}
+			.total{
+				padding-left: 24 / 30rem;
+				p{
+					span:nth-child(1){
+						font-size: 32 / 30rem;
+						line-height: 32 / 30rem;
+						font-weight: 700;
+						color: #1c436f;
+					}
+					span:nth-child(2){
+						font-size: 24 / 30rem;
+						line-height: 24 / 30rem;
+						color: #1c436f;
+					}
+				}
+			}
+		}
+		.order_info_btn{
+			height: 112 / 30rem;
+			padding: 0 40 / 30rem;
+			overflow: hidden;
+			.btn{
+				float: right;
+				padding-top: 18 / 30rem;
+				a{ 
+					font-size: 28 / 30rem;
+					color: #fff;
+					line-height: 28 / 30rem;
+					border-radius: 10 / 30rem;
+					background-color: #1c436f;
+					padding: 22 / 30rem 40 / 30rem;
+				}
+				a:hover{
+					background-color: #1c436f;
+					color: rgba(255, 255, 255, 0.3);
+				}
+				a:active{
+					background-color: rgba(28, 67, 111, 0.4);
+					color: rgba(255, 255, 255, 0.6);
+				}
+			}
+		}
+	}
+	.wait_service{
+		// border-top: 0;
+	}
+	// .wait_evaluate{
+	// 	margin-top: 16 / 30rem;
+	// }
+	.account_paid{
+		// margin-top: 16 / 30rem;
+		.service_info{
+			.introduce{
+				p:nth-child(1){
+					font-size: 28 / 30rem;
+					line-height: 28 / 30rem;
+					color: #333;
+    				overflow: hidden;
+    				text-overflow: ellipsis;
+    				white-space: nowrap;
+    				word-break: break-all;
+				}
+			}
+		}
+	}
+	.refunded{
+		// margin-top: 16 / 30rem;
+		.order_info_btn{
+			.btn{
+				a{
+					font-size: 28 / 30rem;
+					line-height: 28 / 30rem;
+					color: #1c436f;
+					padding: 22 / 30rem 40 / 30rem;
+					background-color: #fff;
+					border: 1px solid #1c436f;
+					border-radius: 10 / 30rem;
+				}
+				a:hover{
+					background-color: #fff;
+					border: 1px solid #1c436f;
+					color: rgba(28, 67, 111, 0.3);
+				}
+				a:active{
+					background-color: #fff;
+					border: 1px solid rgba(28, 67, 111, 0.4);
+					color: rgba(28, 67, 111, 0.6);
+				}
+			}			
+		}
+	}
+	.service_over{
+		// margin-top: 16 / 30rem;
+	}
+	.whole{
+		.wait_service{
+			// margin-top: 16 / 30rem;
+		}
+		.wait_evaluate{
+			margin-top: 16 / 30rem;
+		}
+		.account_paid{
+			margin-top: 16 / 30rem;
+		}
+		.refunded{
+			margin-top: 16 / 30rem;
+		}
+		.service_over{
+			margin-top: 16 / 30rem;
+		}
+	}
+	.footer{
+		height: 328 / 30rem;
+		background-color: #f0f3f5;
+		overflow: hidden;
+		.xkd_logo{
+				width: 376 / 30rem;
+				height: 76 / 30rem;
+				margin: 132 / 30rem auto;
+		}
+	}
+}
